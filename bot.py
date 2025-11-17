@@ -7,6 +7,7 @@ load_dotenv()
 
 api_id = int(os.getenv("API_ID"))
 api_hash = os.getenv("API_HASH")
+bot_token = os.getenv("bot_token")
 
 client = TelegramClient("job_scraper_session", api_id, api_hash)
 
