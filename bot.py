@@ -36,7 +36,7 @@ async def job_handler(event):
 
 
 async def main():
-    await client.start()  # login using phone number
+    await client.start(bot_token=bot_token)
     print("Bot started successfully! Listening for job posts...")
     await client.run_until_disconnected()
 
