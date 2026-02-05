@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+
+# Virtual environments
+venv/
+venvsource/
+
+# Telethon sessions
+*.session
+*.session-journal
+
+# Environment & secrets
+.env
+*.json
+
+# OS files
+.DS_Store
+Thumbs.db
