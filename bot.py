@@ -1,11 +1,12 @@
+import os
 import asyncio
 import datetime
 from telethon import TelegramClient, events
 from telethon.errors import FloodWaitError
 
 # ===================== TELEGRAM CONFIG =====================
-API_ID = 39037048
-API_HASH = "785a3b4c965713d579bc966ebf06f7b8"
+API_ID = int(os.getenv("API_ID")) 
+API_HASH = os.getenv("API_HASH")
 SESSION_NAME = "job_scraper_session"
 
 CHANNELS = [
@@ -99,6 +100,10 @@ async def main():
     await client.run_until_disconnected()
 
 # ===================== ENTRY POINT =========================
-if __name__ == "__main__":
-    asyncio.run(main())
+while True:
+    try:
+        asyncio.run(main())
+    except Exception as e:
+        print("Crash:", e)
+        time.sleep(10)
 
