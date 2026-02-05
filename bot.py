@@ -70,9 +70,9 @@ async def live_handler(event):
     print("✔ Live post forwarded")
 
 # ===================== HISTORY (LAST 5 DAYS) ===============
-async def scrape_last_2_days():
-    print("🔍 Scraping last 2 days...")
-    since = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=2)
+async def scrape_last_7_days():
+    print("🔍 Scraping last 7 days...")
+    since = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=7)
 
     for channel in CHANNELS:
         print(f"📂 Channel: {channel}")
@@ -94,7 +94,7 @@ async def main():
     print("🤖 Bot is running...")
 
     # One-time history scrape
-    await scrape_last_2_days()
+    await scrape_last_7_days()
 
     print("📡 Listening for live posts...")
     await client.run_until_disconnected()
